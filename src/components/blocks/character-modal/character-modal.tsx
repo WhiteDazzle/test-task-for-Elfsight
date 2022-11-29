@@ -16,8 +16,11 @@ const CharacterModal = () => {
   console.log(charactersData);
   return (
     <div className={styles["character-modal"]}>
-      <img src={charactersData.image} alt={`здесь должно быть изображение выбранного персонажа`}/>
-        <h1 className={styles.title}> {charactersData.name} </h1>
+      <img
+        src={charactersData.image}
+        alt={`здесь должно быть изображение выбранного персонажа`}
+      />
+      <h1 className={styles.title}> {charactersData.name} </h1>
     </div>
   );
 };

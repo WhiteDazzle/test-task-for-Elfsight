@@ -4,7 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 const Filters = ({
   onChangeFilters,
 }: {
@@ -25,22 +25,22 @@ const Filters = ({
   };
   return (
     <form className={styles["filters-form"]} onSubmit={handleSubmit}>
-        <FormControl sx={{ m: 0.6, minWidth: 200 }} size='small'>
-          <InputLabel id="demo-simple-select-helper-label">status</InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            value={status}
-            label="status"
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <MenuItem value="">any</MenuItem>
-            <MenuItem value={"alive"}>alive</MenuItem>
-            <MenuItem value={"dead"}>dead</MenuItem>
-            <MenuItem value={"unknown"}>unknown</MenuItem>
-          </Select>
-        </FormControl>
-      <FormControl sx={{ m: 0.5, minWidth: 200, Height: 40 }} size='small'>
+      <FormControl sx={{ m: 0.6, minWidth: 200 }} size="small">
+        <InputLabel id="demo-simple-select-helper-label">status</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={status}
+          label="status"
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <MenuItem value="">any</MenuItem>
+          <MenuItem value={"alive"}>alive</MenuItem>
+          <MenuItem value={"dead"}>dead</MenuItem>
+          <MenuItem value={"unknown"}>unknown</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl sx={{ m: 0.5, minWidth: 200, Height: 40 }} size="small">
         <InputLabel id="demo-simple-select-helper-label">gender</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
@@ -55,8 +55,22 @@ const Filters = ({
           <MenuItem value={"genderless"}>genderless</MenuItem>
         </Select>
       </FormControl>
-      <TextField label="Type" sx={{m: 0.5, maxWidth: 200}} size={'small'} value={type} variant="outlined" onChange={(e)=> setType(e.target.value)}/>
-      <TextField label="species" sx={{m: 0.5, maxWidth: 200}} size={'small'} value={species} variant="outlined" onChange={(e)=> setSpecies(e.target.value)}/>
+      <TextField
+        label="Type"
+        sx={{ m: 0.5, maxWidth: 200 }}
+        size={"small"}
+        value={type}
+        variant="outlined"
+        onChange={(e) => setType(e.target.value)}
+      />
+      <TextField
+        label="species"
+        sx={{ m: 0.5, maxWidth: 200 }}
+        size={"small"}
+        value={species}
+        variant="outlined"
+        onChange={(e) => setSpecies(e.target.value)}
+      />
 
       <button type={"submit"}> применить </button>
     </form>

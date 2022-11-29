@@ -6,7 +6,7 @@ import typeCharter from "../../../typeData/typeCharter";
 import { useQuery } from "@tanstack/react-query";
 import getChartersList from "../../../services/api-charters-list";
 import { Pagination, Modal } from "@mui/material";
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ReplaceParameterInSearchString from "../../../assets/functions/ReplaceParameterInSearchString";
 import CharacterModal from "../../blocks/character-modal/character-modal";
@@ -35,32 +35,37 @@ const CharactersList = () => {
 
   const createCharacterCard = (character: typeCharter) => {
     return (
-
-        <li className={styles["card-wrapper"]} key={character.id} tabIndex={0}>
-          <Link to={search + `#` + character.id}>
+      <li className={styles["card-wrapper"]} key={character.id} tabIndex={0}>
+        <Link to={search + `#` + character.id}>
           <CharacterCard {...character} />
-          </Link>
-        </li>
+        </Link>
+      </li>
     );
   };
 
   return (
-      <div>
-    <ul className={styles['character-list']}>
-      {charactersListData.results.map(createCharacterCard)}
-    </ul>
-        {charactersListData?.info.pages && charactersListData?.info.pages > 1 && (<Pagination
-        count={charactersListData?.info.pages || 1}
-        page={currentPage}
-        onChange={(e, page) => setCurrentPage(page)}
+    <div>
+      <ul className={styles["character-list"]}>
+        {charactersListData.results.map(createCharacterCard)}
+      </ul>
+      {charactersListData?.info.pages && charactersListData?.info.pages > 1 && (
+        <Pagination
+          count={charactersListData?.info.pages || 1}
+          page={currentPage}
+          onChange={(e, page) => setCurrentPage(page)}
         />
-        )}
-        <Modal open={!!hash} onClose={() => navigate(-1)}>
-          <div className={styles[`character-info`]}>
-            <button className={styles['button-close']} onClick={() => navigate(-1)}>  </button>
-          <CharacterModal/>
-          </div>
-        </Modal>
+      )}
+      <Modal open={!!hash} onClose={() => navigate(-1)}>
+        <div className={styles[`character-info`]}>
+          <button
+            className={styles["button-close"]}
+            onClick={() => navigate(-1)}
+          >
+            {" "}
+          </button>
+          <CharacterModal />
+        </div>
+      </Modal>
     </div>
   );
 };

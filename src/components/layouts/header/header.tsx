@@ -28,7 +28,7 @@ const Header = () => {
   }, [species, navigate, search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `type`, type));
-  }, [type, navigate,search]);
+  }, [type, navigate, search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `gender`, gender));
   }, [gender, navigate, search]);
@@ -44,7 +44,7 @@ const Header = () => {
           variant="outlined"
           onChange={(e) => setSearchName(e.target.value)}
         />
-        <FormControl sx={{ m: 0.6, maxWidth: 150, minWidth: 150, }} size="small">
+        <FormControl sx={{ m: 0.6, maxWidth: 150, minWidth: 150 }} size="small">
           <InputLabel id="demo-simple-select-helper-label">status</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
@@ -59,7 +59,10 @@ const Header = () => {
             <MenuItem value={"unknown"}>unknown</MenuItem>
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 0.5, maxWidth: 150, minWidth: 150, Height: 40 }} size="small">
+        <FormControl
+          sx={{ m: 0.5, maxWidth: 150, minWidth: 150, Height: 40 }}
+          size="small"
+        >
           <InputLabel id="demo-simple-select-helper-label">gender</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"

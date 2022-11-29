@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className={styles['app-wrapper']}>
+      <div className={styles["app-wrapper"]}>
         <div className={styles.app}>
           <Header />
           <CharactersList />
