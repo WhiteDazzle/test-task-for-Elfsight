@@ -5,8 +5,8 @@ import styles from "./character-modal.module.scss";
 const CharacterModal = () => {
   const { hash } = useLocation();
   const {
-    isLoading: isLoading,
-    error: error,
+    isLoading,
+    error,
     data: charactersData,
   } = useQuery(["character", hash], () => getCharter(`/` + hash.slice(1)), {
     keepPreviousData: true,
@@ -16,7 +16,7 @@ const CharacterModal = () => {
   console.log(charactersData);
   return (
     <div className={styles["character-modal"]}>
-      <img src={charactersData.image} />
+      <img src={charactersData.image} alt={`здесь должно быть изображение выбранного персонажа`}/>
         <h1 className={styles.title}> {charactersData.name} </h1>
     </div>
   );

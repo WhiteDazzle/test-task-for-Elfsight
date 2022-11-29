@@ -7,7 +7,7 @@ const CharacterCard = ({
 }: TypeCharter) => {
   return (
     <div className={styles['Character-card']}>
-      <img className={styles.img} src={image} />
+      <img className={styles.img} src={image} alt={''}/>
       <p>{name}</p>
     </div>
   );

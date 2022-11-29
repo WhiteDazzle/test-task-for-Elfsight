@@ -19,19 +19,19 @@ const Header = () => {
 
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `name`, searchName));
-  }, [searchName, navigate]);
+  }, [searchName, navigate, search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `status`, status));
-  }, [status, navigate]);
+  }, [status, navigate, search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `species`, species));
-  }, [species, navigate]);
+  }, [species, navigate, search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `type`, type));
-  }, [type, navigate]);
+  }, [type, navigate,search]);
   useEffect(() => {
     navigate(ReplaceParameterInSearchString(search, `gender`, gender));
-  }, [gender, navigate]);
+  }, [gender, navigate, search]);
   return (
     <header className={styles.header}>
       <form className={styles["filters-form"]}>
